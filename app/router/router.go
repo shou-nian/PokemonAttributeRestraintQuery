@@ -2,6 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/pokemon/AttributeRestraintQuery/app/config"
 	"github.com/pokemon/AttributeRestraintQuery/app/controller"
 	"net/http"
 )
@@ -9,7 +10,7 @@ import (
 func New() *gin.Engine {
 	router := gin.Default()
 
-	// load static files
+	// load HTML files
 	router.LoadHTMLGlob("./app/templates/*")
 
 	router.GET("/", func(context *gin.Context) {
@@ -17,6 +18,15 @@ func New() *gin.Engine {
 			http.StatusOK,
 			"index.html",
 			gin.H{},
+		)
+	})
+
+	router.GET("/help", func(context *gin.Context) {
+		context.JSON(
+			http.StatusOK,
+			gin.H{
+				"msg": config.AllAttributes,
+			},
 		)
 	})
 
