@@ -16,7 +16,28 @@ const (
 	Normal   string = "一般"
 	Poison   string = "毒"
 	Psychic  string = "超能"
-	Rock     string = "岩石"
+	Rock     string = "岩"
 	Steel    string = "钢"
 	Water    string = "水"
 )
+
+var AllAttributes = []string{
+	Bug,
+	Dark,
+	Dragon,
+	Electric,
+	Fairy,
+	Fighting,
+	Fire,
+	Flying,
+	Ghost,
+	Grass,
+	Ground,
+	Ice,
+	Normal,
+	Poison,
+	Psychic,
+	Rock,
+	Steel,
+	Water,
+}

@@ -1,22 +1,25 @@
 package router
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/pokemon/AttributeRestraintQuery/app/controller"
-	"log/slog"
+	"net/http"
 )
 
 func New() *gin.Engine {
 	router := gin.Default()
 
+	// load static files
+	router.LoadHTMLGlob("./app/templates/*")
+
 	router.GET("/", func(context *gin.Context) {
-		_, err := fmt.Fprintf(context.Writer, "hello welcome to pokemon query web site")
-		if err != nil {
-			slog.Error(err.Error())
-			panic(err)
-		}
+		context.HTML(
+			http.StatusOK,
+			"index.html",
+			gin.H{},
+		)
 	})
+
 	router.GET("/pokemon", controller.Query)
 
 	return router

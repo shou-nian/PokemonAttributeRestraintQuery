@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"github.com/pokemon/AttributeRestraintQuery/app/router"
+	"log/slog"
+)
 
 func main() {
-	fmt.Println("welcome to PokemonAttributeRestraintQuery web site")
+	sgi := router.New()
+
+	err := sgi.Run()
+	if err != nil {
+		slog.Error(err.Error())
+		panic(err)
+	}
 }
