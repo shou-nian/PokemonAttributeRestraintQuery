@@ -1,8 +1,10 @@
 package config
 
-type funcMap func() map[float32][]string
+import "github.com/pokemon/AttributeRestraintQuery/app/model"
 
-var FuncMapping = map[string]funcMap{
+type FuncMap func() model.ResultType
+
+var FuncMapping = map[string]FuncMap{
 	Bug:      BugAttributeRestraint,
 	Dark:     DarkAttributeRestraint,
 	Dragon:   DragonAttributeRestraint,

@@ -1,48 +1,50 @@
 package config
 
-func BugAttributeRestraint() map[float32][]string {
+import "github.com/pokemon/AttributeRestraintQuery/app/model"
+
+func BugAttributeRestraint() model.ResultType {
 	restraint := make(map[float32][]string)
 
 	restraint[0.5] = []string{Fighting, Grass, Ground}
 	restraint[2] = []string{Fire, Rock, Flying}
 
-	return restraint
+	return map[string]map[float32][]string{Bug: restraint}
 }
 
-func DarkAttributeRestraint() map[float32][]string {
+func DarkAttributeRestraint() model.ResultType {
 	restraint := make(map[float32][]string)
 
 	restraint[0] = []string{Psychic}
 	restraint[0.5] = []string{Ghost, Dark}
 	restraint[2] = []string{Fighting, Bug, Fairy}
 
-	return restraint
+	return map[string]map[float32][]string{Dark: restraint}
 }
 
-func DragonAttributeRestraint() map[float32][]string {
+func DragonAttributeRestraint() model.ResultType {
 	restraint := make(map[float32][]string)
 
 	restraint[0.5] = []string{Fire, Water, Grass, Electric}
 	restraint[2] = []string{Ice, Dragon, Fairy}
 
-	return restraint
+	return map[string]map[float32][]string{Dragon: restraint}
 }
 
-func ElectricAttributeRestraint() map[float32][]string {
+func ElectricAttributeRestraint() model.ResultType {
 	restraint := make(map[float32][]string)
 
 	restraint[0.5] = []string{Flying, Steel, Electric}
 	restraint[2] = []string{Ground}
 
-	return restraint
+	return map[string]map[float32][]string{Dragon: restraint}
 }
 
-func FairyAttributeRestraint() map[float32][]string {
+func FairyAttributeRestraint() model.ResultType {
 	restraint := make(map[float32][]string)
 
 	restraint[0] = []string{Dragon}
 	restraint[0.5] = []string{Bug, Dragon, Fighting}
 	restraint[2] = []string{Poison, Steel}
 
-	return restraint
+	return map[string]map[float32][]string{Fairy: restraint}
 }

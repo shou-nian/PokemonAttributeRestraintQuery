@@ -12,11 +12,12 @@ func New() *gin.Engine {
 
 	// load HTML files
 	router.LoadHTMLGlob("./app/templates/*")
+	//router.Static("/static", "./")
 
 	router.GET("/", func(context *gin.Context) {
 		context.HTML(
 			http.StatusOK,
-			"index.html",
+			"/static/index.html",
 			gin.H{},
 		)
 	})
