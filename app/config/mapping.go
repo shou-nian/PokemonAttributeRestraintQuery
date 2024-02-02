@@ -10,4 +10,8 @@ var FuncMapping = map[string]FuncMap{
 	Dragon:   DragonAttributeRestraint,
 	Electric: ElectricAttributeRestraint,
 	Fairy:    FairyAttributeRestraint,
+	Fighting: FightingAttributeRestraint,
+	Fire:     FireAttributeRestraint,
+	Flying:   FlyingAttributeRestraint,
+	Ghost:    GhostAttributeRestraint,
 }

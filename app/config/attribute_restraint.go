@@ -48,3 +48,41 @@ func FairyAttributeRestraint() model.ResultType {
 
 	return map[string]map[float32][]string{Fairy: restraint}
 }
+
+func FightingAttributeRestraint() model.ResultType {
+	restraint := make(map[float32][]string)
+
+	restraint[0.5] = []string{Dark, Bug, Rock}
+	restraint[2] = []string{Flying, Psychic, Fairy}
+
+	return map[string]map[float32][]string{Fairy: restraint}
+}
+
+func FireAttributeRestraint() model.ResultType {
+	restraint := make(map[float32][]string)
+
+	restraint[0.5] = []string{Bug, Ice, Steel, Fire, Grass, Fairy}
+	restraint[2] = []string{Water, Rock, Ground}
+
+	return map[string]map[float32][]string{Fairy: restraint}
+}
+
+func FlyingAttributeRestraint() model.ResultType {
+	restraint := make(map[float32][]string)
+
+	restraint[0] = []string{Ground}
+	restraint[0.5] = []string{Bug, Grass, Fighting}
+	restraint[2] = []string{Rock, Electric, Ice}
+
+	return map[string]map[float32][]string{Fairy: restraint}
+}
+
+func GhostAttributeRestraint() model.ResultType {
+	restraint := make(map[float32][]string)
+
+	restraint[0] = []string{Normal, Fighting}
+	restraint[0.5] = []string{Bug, Poison}
+	restraint[2] = []string{Ghost, Dark}
+
+	return map[string]map[float32][]string{Fairy: restraint}
+}
